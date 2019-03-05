@@ -28,7 +28,7 @@ http://www.belajarduino.com/2016/10/arduinop.html
 *note : son de meilleur qualité en **mono** avec la configuration DF Player mini + Module Ampli LM386 (MONO 0.5-25watt)*
 
 ### Installation
-* Branché l'arduino à votre ordinateur, installé le programme [Arduino IDE](https://www.arduino.cc/en/Main/Software), et téléversez le croquis.
+* Branchez l'Arduino à votre ordinateur, installez le programme [Arduino IDE](https://www.arduino.cc/en/Main/Software), et téléversez le [croquis](https://github.com/aerao/Bartop-Super-Bash/blob/master/Bartop_Super_Bash.ino).
 * Mettre les sons classiques(default), sur la carte SD, dans le dossier SD:/01/ (mettre au format 0001.mp3 0002.mp3 ...)
 * Mettre les sons plus cassant(Bonus), sur la carte SD, dans le dossier SD:/02/ (mettre au format 0001.mp3 0002.mp3 ...)
 * Récuper et mettre le pack de son pour le [BASH], sur la carte SD, dans le dossier SD:/03/ (mettre au format 0001.mp3 0002.mp3 ...)
@@ -72,7 +72,7 @@ Sorti du [volume] automatique et retour au [BASH], 4s après avoir appuyé sur l'u
 ### Pack Sons
 C'est pas parfait, mais j'ai essayé au mieux de récupérer et retravailler pas mal de sons pour mon Bartop personnel.
 
-Du coup, cadeau : https://mega.nz/#!JZMnGSJI!q-EaCZOU7YUW0rML0SYtVur5ViIq8yc9RCoseJDsXSg
+Quelques sons : https://mega.nz/#!JZMnGSJI!q-EaCZOU7YUW0rML0SYtVur5ViIq8yc9RCoseJDsXSg
 
 *mdp: bartop2019*
 
