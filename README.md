@@ -5,7 +5,7 @@ Bashing de sons entre joueurs sur Bartop
 ## Késako ?
 Lance un son aléatoire quand on appuie sur un bouton.
 
-L'idée est de lancer un "Bash" (un pique, une casse...) à votre adversaire quand vous l'avez battu à un combat (Street Fighter par exemple). Certains sons plus "cassant" peuvent être lancés, mais sont plus aléatoire.
+L'idée est de lancer un "Bash", un pique, une casse... à votre adversaire (qui devrait être à coté de vous étant donné que vous jouer avec lui sur un Bartop) quand vous l'avez battu à un combat (Street Fighter par exemple). Certains sons, plus "cassant", peuvent être lancés, mais sont plus rare.
 
 ### Developpement
 Codé pour l'Arduino/DFPlayer Mini, avec la librairie [DFRobotDFPlayerMini](https://github.com/DFRobot/DFRobotDFPlayerMini)
