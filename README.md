@@ -69,8 +69,9 @@ Sorti du [volume] automatique et retour au [BASH], 4s après avoir appuyé sur l'u
 **note: au delà des 6s, un nouveau son se lance et retour automatique au [BASH]*
 
 ### Pack Sons
-J'ai récupéré et refait pas mal de sons pour mon Bartop personnel.
-cadeau : https://mega.nz/#!JZMnGSJI!q-EaCZOU7YUW0rML0SYtVur5ViIq8yc9RCoseJDsXSg
+C'est pas parfait, mais j'ai essayé au mieux de récupérer et retravailler pas mal de sons pour mon Bartop personnel.
+
+Du coup, cadeau : https://mega.nz/#!JZMnGSJI!q-EaCZOU7YUW0rML0SYtVur5ViIq8yc9RCoseJDsXSg
 
 *mdp: bartop2019*
 
