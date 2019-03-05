@@ -60,14 +60,15 @@ Permet d'éviter d'ouvrir le Bartop pour modifier le volume du [BASH], sur l'ampl
 
 Dans le [BASH], maintenir appuyer les 2 boutons simultanément.
 
-=> entre 3 et 6s, un son va s'activer
+=> entre 3 et 6s, un son va s'activer[*]
+
 => Relâcher les 2 boutons, vous avez activer le menu [volume]
 * Appuyer bouton 1 pour **diminuer** le volume
 * Appuyer bouton 2 pour **augmenter** le volume
 
 Sorti du [volume] automatique et retour au [BASH], 4s après avoir appuyé sur l'un des boutons (se réinitialise à chaque appui)
 
-**note: au delà des 6s, un nouveau son se lance et retour automatique au [BASH]*
+[*]*note: au delà des 6s, un nouveau son se lance et retour automatique au [BASH]*
 
 ### Pack Sons
 C'est pas parfait, mais j'ai essayé au mieux de récupérer et retravailler pas mal de sons pour mon Bartop personnel.
