@@ -36,12 +36,12 @@ http://www.belajarduino.com/2016/10/arduinop.html
 Maintenir appuyer les 2 boutons pendant 10s pour activer le [BASH] (Maintenir de nouveau les 2 boutons pendant 10s, désactive le [BASH])
 
 Appuyer sur bouton 1 ou bouton 2 
-* lance un son aléatoire(default) ou (Bonus) des dossiers SD:/01/ || SD:/02/ avec un timer de **13s** (configurable)
+* lance un son aléatoire(default) ou (Bonus) des dossiers SD:/01/ || SD:/02/ avec un timer de **13s** (10s + 3s), (configurable)
 ```
-delay(13000); // en ms, délai minimum après Default
+delay(10000); // en ms, délai minimum après Default
 ```
 ```
-delay(13000); // en ms, délai minimum après Bonus
+delay(10000); // en ms, délai minimum après Bonus
 ```
 
 * Le son aléatoire(Bonus) a une chance de **5%** d'être lancé (configurable)
@@ -67,6 +67,12 @@ Dans le [BASH], maintenir appuyer les 2 boutons simultanément.
 Sorti du [volume] automatique et retour au [BASH], 4s après avoir appuyé sur l'un des boutons (se réinitialise à chaque appui)
 
 **note: au delà des 6s, un nouveau son se lance et retour automatique au [BASH]*
+
+### Pack Sons
+J'ai récupéré et refait pas mal de sons pour mon Bartop personnel.
+cadeau : https://mega.nz/#!JZMnGSJI!q-EaCZOU7YUW0rML0SYtVur5ViIq8yc9RCoseJDsXSg
+
+*mdp: bartop2019*
 
 ## Version
 v. 1.0 - Projet initial - 2019-03-05 *(version perfectible, tous conseils seront évidemment les bienvenus)*

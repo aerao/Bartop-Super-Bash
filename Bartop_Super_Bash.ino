@@ -1,10 +1,11 @@
-/////////////////////////////
-//                         //
-//    BARTOP SUPER BASH    //
-//    v1.0 (05/03/2019)    //
-//    @aerao               //
-//                         //
-/////////////////////////////
+////////////////////////////////////////////////////
+//                                                //
+//    BARTOP SUPER BASH                           //
+//    v1.0 (05/03/2019)                           //
+//    @aerao                                      //
+//    https://github.com/aerao/Bartop-Super-Bash  //
+//                                                //
+////////////////////////////////////////////////////
 
 
 #include <SoftwareSerial.h>
@@ -13,7 +14,7 @@
 SoftwareSerial mySoftwareSerial(10, 11); // RX, TX
 DFRobotDFPlayerMini myDFPlayer;
 
-// ACCESS BARTOP SUPER BASH
+// ACCESS
 const byte btnP1 = 2;
 const byte btnP2 = 3;
 unsigned long begin_timer;
@@ -41,10 +42,7 @@ byte tabDefault[80];
 byte tabBonus[20];
 byte tab1_swap = 1;
 byte tab2_swap = 1;
-
-// % de chance pour trouver les MP3 Bonus
-byte bonusMP3 = 5;
-//
+byte bonusMP3 = 5; // en %
 
 void setup () {
   mySoftwareSerial.begin(9600);
@@ -68,16 +66,7 @@ void setup () {
   for (int i = 0; i < folder02Max; i++) {  // INITIALISATION DU TABLEAU BONUS
     tabBonus[i] = i + 1;
   }
-
-  Serial.println("Players, choose your destiny...");
-  Serial.println(tabDefault[(folder01Max - 1)]);
-
-  Serial.print("I threw a random die and got ");
-  Serial.print(random(1, 20));
-  Serial.print(". Then I threw a TrueRandom die and got ");
-  Serial.println(random(1, 20));
 }
-
 void timer_init() {
   if (digitalRead(btnP1) == HIGH && digitalRead(btnP2) == HIGH) {
     if (variable_t == false) {
@@ -102,12 +91,12 @@ void melange(byte tableau[], byte taille) {
     }
   }
 }
-void initialiserRandom() {
-  uint32_t alea = 0;
-  for (uint8_t i = 0; i < 32; i++) {
-    alea = (alea << 1) | (analogRead(0) & 1);
+void randomInit() {
+  byte rs = 0;
+  for (byte i = 0; i < 32; i++) {
+    rs = (rs << 1) | (analogRead(0) & 1);
   }
-  randomSeed(alea);
+  randomSeed(rs);
 }
 
 void loop () {
@@ -117,17 +106,10 @@ void loop () {
       if (temp1 == false) {
         begin_timer = millis();
         temp1 = true;
-        Serial.println("Connexion en cours, veuillez patienter...");
       } else if ((millis() - begin_timer) >= time_out) {
-        /* initialiserRandom();*/
+        randomInit();
         access_BSB = true;
         myDFPlayer.playLargeFolder(3, 1);
-        Serial.println();
-        Serial.println("Vous venez d'acc?der au Bartop Super Bash !");
-        Serial.print("folder01 = ");
-        Serial.println(folder01Max);
-        Serial.print("folder02Max = ");
-        Serial.println(folder02Max);
         delay(2000);
       }
     }
@@ -136,14 +118,12 @@ void loop () {
       if (temp1 == false) {
         begin_timer = millis();
         temp1 = true;
-        Serial.println("Acc?s aux options en cours...");
       }
       if ((millis() > (begin_timer + 3000)) && (millis() < (begin_timer + 6000))) {
         if (temp2 == false) {
           temp2 = true;
           menu_Vol = true;
           myDFPlayer.playLargeFolder(3, 3);
-          Serial.println("Param?trage volume (on)");
         }
       }
       if ((millis() > (begin_timer + 6000)) && ((millis() - begin_timer) < time_out)) {
@@ -151,7 +131,6 @@ void loop () {
           temp3 = true;
           menu_Vol = false;
           myDFPlayer.playLargeFolder(3, 4);
-          Serial.println("Param?trage volume (off)");
         }
       }
       if ((millis() - begin_timer) > time_out) {
@@ -159,7 +138,6 @@ void loop () {
         if (temp4 == false) {
           temp4 = true;
           myDFPlayer.playLargeFolder(3, 2);
-          Serial.println("Bartop Super Bash d?sactiv? :(");
           delay(3000);
         }
       }
@@ -185,7 +163,6 @@ void loop () {
       timer_init();
       vol_BSB = vol_BSB + 3;
       myDFPlayer.volume(vol_BSB);
-
       myDFPlayer.playLargeFolder(3, 5);
       delay(666);
     }
@@ -195,7 +172,6 @@ void loop () {
       access_BSB = true;
       menu_general = true;
       myDFPlayer.playLargeFolder(3, 1);
-
       delay(1500);
     }
   }
@@ -210,23 +186,25 @@ void loop () {
     if (start != 1) { //PLAY DEFAULT MP3
 
       if (compteur1 == 0) {
-
         melange(tabDefault, folder01Max);
         while (tab1_swap == tabDefault[0] || tab1_swap == tabDefault[1]) {
           melange(tabDefault, folder01Max);
         }
       }
       myDFPlayer.playLargeFolder(1, tabDefault[compteur1]);
-
       compteur1++;
       if (compteur1 == folder01Max) {
         compteur1 = 0;
         tab1_swap = tabDefault[folder01Max - 1];
       }
-      delay(13000); // délai minimum après Default
+      delay(3000);
+      if ((digitalRead(btnP1) == LOW || digitalRead(btnP2) == LOW)) {
+        play_Music = false;
+      }else {
+        delay(10000); // délai minimum après Default
+      }
 
     } else if (start == 1)  { //PLAY BONUS MP3
-
       if (compteur2 == 0) {
         melange(tabBonus, folder02Max);
         while (tab2_swap == tabBonus[0] || tab2_swap == tabBonus[1]) {
@@ -234,16 +212,18 @@ void loop () {
         }
       }
       myDFPlayer.playLargeFolder(2, tabBonus[compteur2]);
-
       compteur2++;
-
       if (compteur2 == folder02Max) {
         compteur2 = 0;
         tab2_swap = tabBonus[folder02Max - 1];
       }
-      delay(13000); // délai minimum après Bonus
+      delay(3000);
+      if ((digitalRead(btnP1) == LOW || digitalRead(btnP2) == LOW)) {
+        play_Music = false;
+      }else {
+        delay(10000); // délai minimum après Bonus
+      }
     }
-
   }
   if ((digitalRead(btnP1) == HIGH && digitalRead(btnP2) == HIGH) && menu_general == true && access_Vol == false) {
     temp1 = false;
@@ -253,5 +233,4 @@ void loop () {
     variable_t = false;
     play_Music = true;
   }
-
 }
