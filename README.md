@@ -28,6 +28,7 @@ http://www.belajarduino.com/2016/10/arduinop.html
 *note : son de meilleur qualité en **mono** avec la configuration DF Player mini + Module Ampli LM386 (MONO 0.5-25watt)*
 
 ### Installation
+* Branché l'arduino à votre ordinateur, installé le programme [Arduino IDE](https://www.arduino.cc/en/Main/Software), et téléversez le croquis.
 * Mettre les sons classiques(default), sur la carte SD, dans le dossier SD:/01/ (mettre au format 0001.mp3 0002.mp3 ...)
 * Mettre les sons plus cassant(Bonus), sur la carte SD, dans le dossier SD:/02/ (mettre au format 0001.mp3 0002.mp3 ...)
 * Récuper et mettre le pack de son pour le [BASH], sur la carte SD, dans le dossier SD:/03/ (mettre au format 0001.mp3 0002.mp3 ...)
