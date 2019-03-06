@@ -18,17 +18,17 @@ Certains sons, plus "cassant", peuvent aussi être lancés (plus rare).
 - 2 boutons arcade de libre (3 à 4 boutons dans un futur projet)
 - Arduino (nano/uno)
 - DFPlayer Mini
-- Récupérer la librairie [DFRobotDFPlayerMini](https://github.com/DFRobot/DFRobotDFPlayerMini) pour la compilation de l'Arduino
+- Récupérer la librairie [DFRobotDFPlayerMini](https://github.com/DFRobot/DFRobotDFPlayerMini) pour la phase de compilation de l'Arduino
 - SDCard
-- Sons au format MP3 (entre 1s et 10s recommandé)
+- Sons au format MP3 (entre 1s et 10s max recommandé)
 
 Dans l'idéal, le couple Arduino/Dfplayer doivent être relié à un ampli/HP (indépendant de l'ampli/HP général de votre Bartop)
 
-### Montage (Arduino + DFPlayer Mini + Ampli + HP )
+### Montage (Arduino + DFPlayer Mini + Ampli + 1xHP )
 Se référer aux exemples de la page suivante selon votre convenance :
 http://www.belajarduino.com/2016/10/arduinop.html
 
-*note : son de meilleur qualité en **mono** avec la configuration DF Player mini + Module Ampli LM386 (MONO 0.5-25watt)*
+*note : son de meilleur qualité en **mono** avec la configuration DF Player mini + Module Ampli/Ampli Mono (0.5-25watt)*
 
 ### Installation
 * Branchez l'Arduino à votre ordinateur, installez le programme [Arduino IDE](https://www.arduino.cc/en/Main/Software), et téléversez le [croquis](https://github.com/aerao/Bartop-Super-Bash/blob/master/Bartop_Super_Bash.ino).
@@ -52,7 +52,7 @@ delay(10000); // en ms, délai minimum après Bonus
 ```
 byte bonusMP3 = 5; // en %
 ```
-Par défaut, le nombre de MP3(default) qui peuvent être pris en charge est de **80**, et le nombre de MP3(Bonus) est de **20** (augmenter leur valeur si besoin).
+Par défaut, pour des raisons d'optimisation de mémoire de l'arduino (nano dans mon cas), le nombre maximum de MP3(default) qui peuvent être pris en charge est de **80**, et le nombre de MP3(Bonus) est de **20** (augmenter leur valeur si besoin).
 ```
 byte tabDefault[80]; // valeur max 255
 byte tabBonus[20]; // valeur max 255
@@ -63,15 +63,15 @@ Permet d'éviter d'ouvrir le Bartop pour modifier le volume du [BASH], sur l'ampl
 
 Dans le [BASH], maintenir appuyer les 2 boutons simultanément.
 
-=> entre 3 et 6s, un son va s'activer[*]
+=> un nouveau son va s'activer[*]
 
-=> Relâcher les 2 boutons, vous avez activer le menu [volume]
+=> Relâcher les 2 boutons, vous avez activer le menu [volume], et désactivé le [bash] temporairement.
 * Appuyer bouton 1 pour **diminuer** le volume
 * Appuyer bouton 2 pour **augmenter** le volume
 
 Sorti du [volume] automatique et retour au [BASH], 4s après avoir appuyé sur l'un des boutons (se réinitialise à chaque appui)
 
-[*]*note: au delà des 6s, un nouveau son se lance et retour automatique au [BASH]*
+[*]*note: si vous continuer à maintenez les 2 boutons (3s de plus), un nouveau son se lance et retour automatique au [BASH]*
 
 ### Pack Sons
 C'est pas parfait, mais j'ai essayé au mieux de récupérer et retravailler pas mal de sons pour mon Bartop personnel.
