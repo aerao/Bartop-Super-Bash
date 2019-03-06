@@ -3,16 +3,19 @@
 Bashing de sons entre joueurs sur Bartop
 
 ## Késako ?
-Lance un son aléatoire quand on appuie sur un bouton.
+Lance un son aléatoire pour "basher" son adversaire, quand on appuie sur un bouton type arcade.
 
-L'idée est de lancer un "Bash", un pique, une casse... à votre adversaire (qui devrait être à coté de vous étant donné que vous jouer avec lui sur un Bartop) quand vous l'avez battu à un combat (Street Fighter par exemple). Certains sons, plus "cassant", peuvent être lancés, mais sont plus rare.
+L'idée est de lancer manuellement un "Bash", un pique, une casse... à votre adversaire quand vous l'avez battu à un combat, comme Street Fighter par exemple (adversaire qui devrait normalement être à coté de vous, étant donné que vous jouez avec lui sur un Bartop).
 
-### Developpement
-Codé pour l'Arduino/DFPlayer Mini, avec la librairie [DFRobotDFPlayerMini](https://github.com/DFRobot/DFRobotDFPlayerMini)
+Certains sons, plus "cassant", peuvent aussi être lancés (plus rare).
+
+### Développement
+* Version 2 boutons arcade
+* Codé pour l'Arduino/DFPlayer Mini, avec la librairie [DFRobotDFPlayerMini](https://github.com/DFRobot/DFRobotDFPlayerMini)
 
 ### Prérequis et Matériel
 - Avoir un Bartop (ou Borne d'arcade)
-- 2 boutons de libre (3 à 4 boutons dans un futur projet)
+- 2 boutons arcade de libre (3 à 4 boutons dans un futur projet)
 - Arduino (nano/uno)
 - DFPlayer Mini
 - Récupérer la librairie [DFRobotDFPlayerMini](https://github.com/DFRobot/DFRobotDFPlayerMini) pour la compilation de l'Arduino
