@@ -71,7 +71,7 @@ Dans le [BASH], maintenir appuyer les 2 boutons simultanément.
 
 Sorti du [volume] automatique et retour au [BASH], 4s après avoir appuyé sur l'un des boutons (se réinitialise à chaque appui)
 
-[*]*note: si vous continuer à maintenez les 2 boutons (3s de plus), un nouveau son se lance et retour automatique au [BASH]*
+[*]*note: si vous continuez à maintenir simultanément les 2 boutons (3s de plus), un nouveau son se lance et retour automatique au [BASH]*
 
 ### Pack Sons
 C'est pas parfait, mais j'ai essayé au mieux de récupérer et retravailler pas mal de sons pour mon Bartop personnel.
