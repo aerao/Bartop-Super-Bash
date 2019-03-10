@@ -9,13 +9,18 @@ L'idée est de lancer manuellement un "Bash", un pique, une casse... à votre adve
 
 Certains sons, plus "cassant", peuvent aussi être lancés (plus rare).
 
+### Principe
+Appuyer sur l'un des 2 boutons de votre Bartop déclanche un [BASH] à votre adversaire/ami
+
+
 ### Développement
-* Version 2 boutons arcade
+* Version 2 boutons arcade (voir README_2B.MD)
+* Version 3 boutons arcade (recommandé) =>  2 boutons arcade + 1 bouton "Hotkey" (voir README_3B.MD)
 * Codé pour l'Arduino/DFPlayer Mini, avec la librairie [DFRobotDFPlayerMini](https://github.com/DFRobot/DFRobotDFPlayerMini)
 
 ### Prérequis et Matériel
 - Avoir un Bartop (ou Borne d'arcade)
-- 2 boutons arcade de libre (3 à 4 boutons dans un futur projet)
+- 2 ou 3 boutons arcade de libre
 - Arduino (nano/uno)
 - DFPlayer Mini
 - Récupérer la librairie [DFRobotDFPlayerMini](https://github.com/DFRobot/DFRobotDFPlayerMini) pour la phase de compilation de l'Arduino
@@ -30,58 +35,9 @@ http://www.belajarduino.com/2016/10/arduinop.html
 
 *note : son de meilleur qualité en **mono** avec la configuration DF Player mini + Module Ampli/Ampli Mono (0.5-25watt)*
 
-### Installation
-* Branchez l'Arduino à votre ordinateur, installez le programme [Arduino IDE](https://www.arduino.cc/en/Main/Software), et téléversez le [croquis](https://github.com/aerao/Bartop-Super-Bash/blob/master/Bartop_Super_Bash.ino).
-* Mettre les sons classiques(default), sur la carte SD, dans le dossier SD:/01/ (mettre au format 0001.mp3 0002.mp3 ...)
-* Mettre les sons plus cassant(Bonus), sur la carte SD, dans le dossier SD:/02/ (mettre au format 0001.mp3 0002.mp3 ...)
-* Récuper et mettre le pack de son pour le [BASH], sur la carte SD, dans le dossier SD:/03/ (mettre au format 0001.mp3 0002.mp3 ...)
-
-### Fonctionnement
-Maintenir appuyer les 2 boutons pendant 10s pour activer le [BASH] (Maintenir de nouveau les 2 boutons pendant 10s, désactive le [BASH])
-
-Appuyer sur bouton 1 ou bouton 2 
-* lance un son aléatoire(default) ou (Bonus) des dossiers SD:/01/ || SD:/02/ avec un timer de **13s** (10s + 3s), (configurable)
-```
-delay(10000); // en ms, délai minimum après Default
-```
-```
-delay(10000); // en ms, délai minimum après Bonus
-```
-
-* Le son aléatoire(Bonus) a une chance de **5%** d'être lancé (configurable)
-```
-byte bonusMP3 = 5; // en %
-```
-Par défaut, pour des raisons d'optimisation de mémoire de l'arduino (nano dans mon cas), le nombre maximum de MP3(default) qui peuvent être pris en charge est de **80**, et le nombre de MP3(Bonus) est de **20** (augmenter leur valeur si besoin).
-```
-byte tabDefault[80]; // valeur max 255
-byte tabBonus[20]; // valeur max 255
-```
-
-### Accès au menu du volume
-Permet d'éviter d'ouvrir le Bartop pour modifier le volume du [BASH], sur l'ampli si celui n'est pas très accessible.
-
-Dans le [BASH], maintenir appuyer les 2 boutons simultanément.
-
-=> un nouveau son va s'activer[*]
-
-=> Relâcher les 2 boutons, vous avez activer le menu [volume], et désactivé le [bash] temporairement.
-* Appuyer bouton 1 pour **diminuer** le volume
-* Appuyer bouton 2 pour **augmenter** le volume
-
-Sorti du [volume] automatique et retour au [BASH], 4s après avoir appuyé sur l'un des boutons (se réinitialise à chaque appui)
-
-[*]*note: si vous continuez à maintenir simultanément les 2 boutons (3s de plus), un nouveau son se lance et retour automatique au [BASH]*
-
-### Pack Sons
-C'est pas parfait, mais j'ai essayé au mieux de récupérer et retravailler pas mal de sons pour mon Bartop personnel.
-
-Quelques sons : https://mega.nz/#!JZMnGSJI!q-EaCZOU7YUW0rML0SYtVur5ViIq8yc9RCoseJDsXSg
-
-*mdp: bartop2019*
 
 ## Version
-v. 1.0 - Projet initial - 2019-03-05 *(version perfectible, tous conseils seront évidemment les bienvenus)*
+v. 1.0 - Projet initial - 2019-03-10 *(version perfectible, toutes remarques seront évidemment les bienvenues)*
 
 ## Autheur
 * **AERAO** - *100% Homemade* - [aerao](https://github.com/aerao)
