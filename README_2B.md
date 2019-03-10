@@ -15,7 +15,7 @@ Certains sons, plus "cassant", peuvent aussi être lancés (plus rare).
 
 ### Prérequis et Matériel
 - Avoir un Bartop (ou Borne d'arcade)
-- 2 boutons arcade de libre (3 à 4 boutons dans un futur projet)
+- 2 boutons arcade de libre
 - Arduino (nano/uno)
 - DFPlayer Mini
 - Récupérer la librairie [DFRobotDFPlayerMini](https://github.com/DFRobot/DFRobotDFPlayerMini) pour la phase de compilation de l'Arduino
