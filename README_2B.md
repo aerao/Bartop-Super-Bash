@@ -77,10 +77,12 @@ Sorti du [volume] automatique et retour au [BASH], 4s après avoir appuyé sur l
 C'est pas parfait, mais j'ai essayé au mieux de récupérer et retravailler pas mal de sons pour mon Bartop personnel.
 
 Quelques sons : https://mega.nz/#!JZMnGSJI!q-EaCZOU7YUW0rML0SYtVur5ViIq8yc9RCoseJDsXSg
+
 *mdp: bartop2019*
 
 ## Divers
 Shéma du PCB en pdf (D1, D2, D3, D4...) correspond au nombres de bouton que voulez connecter.
+
 https://mega.nz/file/8EUkRQIQ#D7R4zqDv-dSiYQu1PIAbhOB9P6yXC0C9slNWDV7i9yo
 PCB fait sur le site Easy EDA, qui permet ensuite de faire l'impression et l'envoi de celui ci, directement via leur site.
 
