@@ -31,7 +31,7 @@ Dans l'idéal, le couple Arduino/Dfplayer doivent être relié à un ampli/HP (i
 
 ### Montage (Arduino + DFPlayer Mini + Ampli + 1xHP )
 Se référer aux exemples de la page suivante selon votre convenance :
-https://mega.nz/file/MI100BZZ#fO6gkXS1gv7UxtjZW72Olm4Yiv1-k_3HTWc0UjcRUt4 (anciennement http://www.belajarduino.com/2016/10/arduinop.html qui ne fonctionne plus), j'ai récupéré le contenu via web archive et j'ai compressé la page html dans le zip (que vous devez décompresser pour lire la page), c'est pas le plus optimisé mais ca reste fonctionnel.
+https://mega.nz/file/MI100BZZ#fO6gkXS1gv7UxtjZW72Olm4Yiv1-k_3HTWc0UjcRUt4 (anciennement http://www.belajarduino.com/2016/10/arduinop.html qui ne fonctionne plus), j'ai récupéré le contenu via web archive et j'ai compressé la page html dans le zip (que vous devez décompresser pour lire la page), c'est pas le plus optimisé mais ca reste fonctionnel. (fonctionne sous firefox, chrome, opera)
 
 *note : son de meilleur qualité en **mono** avec la configuration DF Player mini + Module Ampli/Ampli Mono (0.5-25watt)*
 
