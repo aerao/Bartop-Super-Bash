@@ -28,14 +28,77 @@ Appuyer sur l'un des 2 boutons de votre Bartop déclanche un [BASH] à votre adv
 Dans l'idéal, le couple Arduino/Dfplayer doivent être relié à un ampli/HP (indépendant de l'ampli/HP général de votre Bartop)
 
 ### Installation
-- Sur votre carte SD (formaté fat32), coller les 3 dossiers audios (01,02,03) sur votre arduino/Nano (https://mega.nz/file/YdEFVAYZ#aOuQaImao8KbG-bVmNwLLmXrGXEK0z4tTq0wvdmiBzw mdp:**bartop**) - Vous pouvez ajouter/enlever des fichiers des dossiers 01,02 à votre convenance.
-- Récupérer la librairie [DFRobotDFPlayerMini] v.1.05 (https://www.arduino.cc/reference/en/libraries/dfrobotdfplayermini/) ou (https://mega.nz/file/0MEHXSCB#Ll_3Q3HHRbwC-IE89Ay4Hl84D3Fg_eX5i_0HHzBq6_Q)
-- installer le dossier *librairie* dans votre dossier par defaut. exemple *C:\Program Files (x86)\Arduino\libraries*
-- installer (la connection ne fonctionne pas) les drivers (https://mega.nz/folder/EZFxgSqL#_8i05frTEYTZpttdJB3Csw)
-- Lancer l'Arduino/Nano, et veiller bien à selectionner (Type de Carte : Arduino Nano) et (Processeur : ATmega / ATemega328P(oldBootloader) et le Port.
-- il est possible que **"Récuperer les informations de la carte"** ne fonctionne pas, ce n'est pas grave car le téléversement doit fonctionner.
+* Récupérer la librairie [DFRobotDFPlayerMini] v.1.05 (https://www.arduino.cc/reference/en/libraries/dfrobotdfplayermini/) ou (https://mega.nz/file/0MEHXSCB#Ll_3Q3HHRbwC-IE89Ay4Hl84D3Fg_eX5i_0HHzBq6_Q)
+* Installer le dossier *DFRobotDFPlayerMini-1.0.5* dans votre dossier par defaut. exemple *C:\Program Files (x86)\Arduino\libraries*
+* Installer (la connection ne fonctionne pas) les drivers (https://mega.nz/folder/EZFxgSqL#_8i05frTEYTZpttdJB3Csw)
+* Branchez l'Arduino à votre ordinateur, installez le programme [Arduino IDE](https://www.arduino.cc/en/Main/Software), et ouvrez le [croquis](https://github.com/aerao/Bartop-Super-Bash/blob/master/Bartop_Super_Bash.ino).
+* Lancer l'Arduino/Nano, et veiller bien à selectionner (Type de Carte : **Arduino Nano**) et (Processeur : **ATmega** ou **ATemega328P(oldBootloader)** et le Port. Il est possible que **"Récuperer les informations de la carte"** ne fonctionne pas, ce n'est pas grave car le téléversement doit fonctionner.
 - Ouvrer le fichier .ino et téléverser
+* Mettre les sons classiques(default), sur la carte SD, dans le dossier SD:/01/ (mettre au format 0001.mp3 0002.mp3 ...)
+* Mettre les sons plus cassant(Bonus), sur la carte SD, dans le dossier SD:/02/ (mettre au format 0001.mp3 0002.mp3 ...)
+* Récuper et mettre le pack de son pour le [BASH], sur la carte SD, dans le dossier SD:/03/ (mettre au format 0001.mp3 0002.mp3 ...)
 
+### Fonctionnement
+Maintenir appuyer les 2 boutons pendant 4s pour activer le [BASH] (Maintenir de nouveau les 2 boutons pendant 4s, désactive le [BASH])
+
+Appuyer sur bouton 1 ou bouton 2 
+* lance un son aléatoire(default) ou (Bonus) des dossiers SD:/01/ || SD:/02/ avec un timer de **6s** (configurable aux lignes 346 et 378)
+```
+for (int c = 0; c < 6000; c++) { // en ms, délai minimum avant de pouvoir relancer un son (Default)
+```
+```
+for (int c = 0; c < 6000; c++) { // en ms, délai minimum avant de pouvoir relancer un son (Bonus)
+```
+
+* Le son aléatoire(Bonus) a une chance de **25%** d'être lancé (configurable à la ligne 60)
+```
+byte bonusMP3 = 25; // en %
+```
+Par défaut, pour des raisons d'optimisation de mémoire de l'arduino (nano dans mon cas), le nombre maximum de MP3(default) qui peuvent être pris en charge est de **80**, et le nombre de MP3(Bonus) est de **20** (augmenter leur valeur si besoin).
+```
+byte tabDefault[80]; // valeur max 255
+byte tabBonus[20]; // valeur max 255
+```
+
+### Accès au menu du volume
+Permet d'éviter d'ouvrir le Bartop pour modifier le volume du [BASH], sur l'ampli si celui n'est pas très accessible.
+
+Dans le [BASH], maintenir appuyer les 2 boutons simultanément.
+
+=> un nouveau son va s'activer[*]
+
+=> Relâcher les 2 boutons, vous avez activer le menu [volume], et désactivé le [bash] temporairement.
+* Appuyer bouton 1 pour **diminuer** le volume
+* Appuyer bouton 2 pour **augmenter** le volume
+
+Sorti du [volume] automatique et retour au [BASH], 4s après avoir appuyé sur l'un des boutons (se réinitialise à chaque appui)
+
+[*]*note: si vous continuez à maintenir simultanément les 2 boutons (3s de plus), un nouveau son se lance et retour automatique au [BASH]*
+
+### Pack Sons
+C'est pas parfait, mais j'ai essayé au mieux de récupérer et retravailler pas mal de sons pour mon Bartop personnel.
+
+Quelques sons : https://mega.nz/#!JZMnGSJI!q-EaCZOU7YUW0rML0SYtVur5ViIq8yc9RCoseJDsXSg
+
+*mdp: bartop*
+
+- Sur votre carte SD (formaté fat32), coller les 3 dossiers audios (01,02,03) (https://mega.nz/file/YdEFVAYZ#aOuQaImao8KbG-bVmNwLLmXrGXEK0z4tTq0wvdmiBzw )
+- Vous pouvez ajouter/enlever des fichiers des dossiers 01,02 (max 80 comme expliquer précédemment, mais c'(est modifiable).
+
+
+## Divers
+Schéma du PCB en pdf (D1, D2, D3, D4...) correspond aux nombres de boutons que voulez connecter.
+
+#**IMPORTANT !**
+- Dans le fichier .ino
+``` 
+const byte btnP1 = 4; // D2 Arduino Nano
+const byte btnP2 = 3; // D3 Arduino Nano
+const byte Hotkey = 2; // D4 Arduino Nano
+```
+les valeurs (4,3,2) peuvent etre différent selon là ou vous brancher vos boutons sur l'Arduino (D2,D3,D4...).
+
+Dans mon cas la broche D4 de l'Arduino correspondait à la valeur 2
 
 ### Montage (Arduino + DFPlayer Mini + Ampli + 1xHP )
 Se référer aux exemples de la page suivante selon votre convenance :
