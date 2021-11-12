@@ -102,6 +102,7 @@ const byte Hotkey = 2; // D4 Arduino Nano
 ```
 les valeurs (4,3,2) peuvent etre différent selon là où vous avez brancher vos boutons sur l'Arduino (D2,D3,D4...).
 
+#### Pour vérifier rapidement :
 - Dans le programme Arduino, apres avoir ouvert le fichier *Bartop-Super-Bash_3B.ino*, vous pouvez activer la console (Ctrl+Shift+M).
 - Téléverser le fichier dans l'Arduino/Nano, et au bout de quelque seconde va s'afficher le message **READY...**
 - Vous n'avez plus qu'à appuyer sur votre bouton Hotkey et l'un des 2 autres boutons et s'affichera le message ==| TURN ON BASHBOARD IN PROGRESS... ==
