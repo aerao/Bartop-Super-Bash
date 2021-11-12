@@ -34,12 +34,10 @@ Dans l'idéal, le couple Arduino/Dfplayer doivent être relié à un ampli/HP (i
 * Récupérer la librairie [DFRobotDFPlayerMini] v.1.05 (https://www.arduino.cc/reference/en/libraries/dfrobotdfplayermini/) ou (https://mega.nz/file/0MEHXSCB#Ll_3Q3HHRbwC-IE89Ay4Hl84D3Fg_eX5i_0HHzBq6_Q)
 * Installer le dossier *DFRobotDFPlayerMini-1.0.5* dans votre dossier par defaut. exemple *C:\Program Files (x86)\Arduino\libraries*
 * Installer (si par la suite la connection/le teléversement ne fonctionne pas) les drivers (https://mega.nz/folder/EZFxgSqL#_8i05frTEYTZpttdJB3Csw)
-* Branchez l'Arduino à votre ordinateur, installez le programme [Arduino IDE](https://www.arduino.cc/en/Main/Software), et ouvrez le [croquis](https://github.com/aerao/Bartop-Super-Bash/blob/master/Bartop_Super_Bash.ino).
+* Branchez l'Arduino à votre ordinateur, installez le programme [Arduino IDE](https://www.arduino.cc/en/Main/Software), et ouvrez le [croquis](https://github.com/aerao/Bartop-Super-Bash/blob/master/Bartop-Super-Bash_3B.ino).
 * Lancer l'Arduino/Nano, et veiller bien à selectionner (Type de Carte : **Arduino Nano**) et (Processeur : **ATmega** ou **ATemega328P(oldBootloader)** et le Port. Il est possible que **"Récuperer les informations de la carte"** ne fonctionne pas, ce n'est pas grave car le téléversement doit fonctionner.
 - Ouvrer le fichier .ino et téléverser
-* Mettre les sons classiques(default), sur la carte SD, dans le dossier SD:/01/ (mettre au format 0001.mp3 0002.mp3 ...)
-* Mettre les sons plus cassant(Bonus), sur la carte SD, dans le dossier SD:/02/ (mettre au format 0001.mp3 0002.mp3 ...)
-* Récuper et mettre le pack de son pour le [BASH], sur la carte SD, dans le dossier SD:/03/ (mettre au format 0001.mp3 0002.mp3 ...)
+* Mettre les sons sur votre carte SD (**voir plus bas la section Pack Sons**)
 
 ### Fonctionnement
 Maintenir appuyer les 2 boutons pendant 4s pour activer le [BASH] (Maintenir de nouveau les 2 boutons pendant 4s, désactive le [BASH])
@@ -85,8 +83,9 @@ Quelques sons : https://mega.nz/#!JZMnGSJI!q-EaCZOU7YUW0rML0SYtVur5ViIq8yc9RCose
 
 *mdp: bartop*
 
-- Sur votre carte SD (formaté fat32), coller les 3 dossiers audios (01,02,03) (https://mega.nz/file/YdEFVAYZ#aOuQaImao8KbG-bVmNwLLmXrGXEK0z4tTq0wvdmiBzw )
-- Vous pouvez ajouter/enlever des fichiers des dossiers 01,02 (max 80 comme expliquer précédemment, mais c'(est modifiable).
+- Sur votre carte SD (formaté fat32), coller les 3 dossiers audios (/01,/02,/03) (https://mega.nz/file/YdEFVAYZ#aOuQaImao8KbG-bVmNwLLmXrGXEK0z4tTq0wvdmiBzw )
+- Vous pouvez ajouter/enlever des fichiers des dossiers /01,/02 (max 80 comme expliquer précédemment, mais c'(est modifiable).
+- Attention, si vous rajouter des son MP3, il faut les mettre au format 0001.mp3 0002.mp3 ...)
 
 
 ## Divers
