@@ -71,16 +71,14 @@ unsigned int vol_BSB = 24; // volume (0-30)
 
 1) Si vous avez déja lancer le BASH avec les 2 touches "Hotkey"+"BTN1" (ou BTN2 selon votre configuration), maintenir le bouton "Hotkey" pendant 5s.
 
-=> un nouveau son va s'activer (*)
+=> Un nouveau son va s'activer (*), ce qui veut dire que vous pouvez entrer dans le menu [Volume]
 
-=> Vous Pouvez entrer dans le menu [Volume]
-
-=> Si vous relacher maintenant le bouton "Hotkey" Vous etes rentrer dans le menu [volume]
+=> Si vous relacher maintenant le bouton "Hotkey", Vous entrez dans le menu [volume]
 
 * Appuyer bouton 1 pour **diminuer** le volume par pallier de 3.
 * Appuyer bouton 2 pour **augmenter** le volume par pallier de 3.
 
-Sorti du [volume] automatique et retour au [BASH] quelque seconde après le dernier appui (un nouveau son se lance).
+La Sauvegarde/Sortie du [volume] et le retour au [BASH] se fait automatiquement, quelque seconde après le dernier appui (un nouveau son se lance).
 
 2) Si vous avez continué à maintenir le bouton "Hotkey" après le 1er son du menu volume, un nouveau son se lance qui indique que vous pouvez maintenant rentrer dans le menu [UltrasBash].
 
@@ -88,7 +86,7 @@ Sorti du [volume] automatique et retour au [BASH] quelque seconde après le dern
 
 Par défaut la valeur est OFF, si vous appuyé su l'un des 2 boutons (peu importe), le mode passe de OFF à ON et vice versa.
 
-Sorti du [UltrasBash] automatique et retour au [BASH] quelque seconde après le dernier appui (un nouveau son se lance).
+La Sauvegarde/Sortie du [UltrasBash] et le retour au [BASH] se fait automatiquement, quelque seconde après le dernier appui (un nouveau son se lance).
 
 ### Pack Sons
 C'est pas parfait, mais j'ai essayé au mieux de récupérer et retravailler pas mal de sons pour mon Bartop personnel.
