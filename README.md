@@ -92,15 +92,18 @@ Quelques sons : https://mega.nz/#!JZMnGSJI!q-EaCZOU7YUW0rML0SYtVur5ViIq8yc9RCose
 Schéma du PCB en pdf (D1, D2, D3, D4...) correspond aux nombres de boutons que voulez connecter.
 
 #**IMPORTANT !**
-- Dans le fichier .ino
+- Dans le fichier *Bartop-Super-Bash_3B.ino*
 ``` 
 const byte btnP1 = 4; // D2 Arduino Nano
 const byte btnP2 = 3; // D3 Arduino Nano
 const byte Hotkey = 2; // D4 Arduino Nano
 ```
-les valeurs (4,3,2) peuvent etre différent selon là ou vous brancher vos boutons sur l'Arduino (D2,D3,D4...).
+les valeurs (4,3,2) peuvent etre différent selon là où vous avez brancher vos boutons sur l'Arduino (D2,D3,D4...).
 
-Dans mon cas la broche D4 de l'Arduino correspondait à la valeur 2
+- Dans le programme Arduino, apres avoir ouvert le fichier *Bartop-Super-Bash_3B.ino*, vous pouvez activer la console (Ctrl+Shift+M).
+- Téléverser le fichier dans l'Arduino/Nano, et au bout de quelque seconde va s'afficher le message **READY...**
+- Vous n'avez plus qu'à appuyer sur votre bouton Hotkey et l'un des 2 autres boutons et s'affichera le message ==| TURN ON BASHBOARD IN PROGRESS... ==
+- Si ce n'est pas les cas, il faudra changer/inverser les valeurs (4,3,2)
 
 ### Montage (Arduino + DFPlayer Mini + Ampli + 1xHP)
 Se référer aux exemples de la page suivante selon votre convenance :
