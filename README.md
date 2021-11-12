@@ -23,6 +23,7 @@ Appuyer sur l'un des 2 boutons de votre Bartop déclanche un [BASH] à votre adv
 - Avoir un Bartop (ou Borne d'arcade)
 - 2 ou 3 boutons arcade à rajouter ou utilsé si déjà mis en place mais inutilisé.
 - Arduino (nano/uno)
+- l'alimentation (5V) de votre Arduino via cable USB, qui sera dans votre votre Borne (ou alimenter via un raspberry)
 - DFPlayer Mini
 - SDCard
 - Sons au format MP3 (entre 1s et 10s max recommandé)
@@ -103,9 +104,10 @@ const byte Hotkey = 2; // D4 Arduino Nano
 les valeurs (4,3,2) peuvent etre différent selon là où vous avez brancher vos boutons sur l'Arduino (D2,D3,D4...).
 
 #### Pour vérifier rapidement :
+- Brancher votre Arduino/Nano à votre ordinateur avec un vable USB.
 - Dans le programme Arduino, apres avoir ouvert le fichier *Bartop-Super-Bash_3B.ino*, vous pouvez activer la console (Ctrl+Shift+M).
-- Téléverser le fichier dans l'Arduino/Nano, et au bout de quelque seconde va s'afficher le message **READY...**
-- Vous n'avez plus qu'à appuyer sur votre bouton Hotkey et l'un des 2 autres boutons et s'affichera le message ==| TURN ON BASHBOARD IN PROGRESS... ==
+- Téléverser le fichier dans l'Arduino/Nano, et au bout de quelque seconde va s'afficher le message **READY...** dans la console.
+- Vous n'avez plus qu'à appuyer sur votre bouton Hotkey et l'un des 2 autres boutons et s'affichera le message **TURN ON BASHBOARD IN PROGRESS...** dans la console.
 - Si ce n'est pas les cas, il faudra changer/inverser les valeurs (4,3,2)
 
 ### Montage (Arduino + DFPlayer Mini + Ampli + 1xHP)
