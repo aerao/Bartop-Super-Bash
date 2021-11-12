@@ -62,20 +62,30 @@ byte tabDefault[80]; // valeur max 255
 byte tabBonus[20]; // valeur max 255
 ```
 
-### Accès au menu du volume
-Permet d'éviter d'ouvrir le Bartop pour modifier le volume du [BASH], sur l'ampli si celui n'est pas très accessible.
+### Accès au menu du [volume] et au mode [UltrasBash]
+Pour le volume, cela permet d'éviter d'ouvrir le Bartop pour modifier le volume du [BASH], sur l'ampli si celui n'est pas très accessible.
+Dans le programme Arduino (Bartop-Super-Bash_3B.ino) la valeur par defaut du [volume] est à 24/30.
 
-Dans le [BASH], maintenir appuyer les 2 boutons simultanément.
+1) Si vous avez déja lancer le BASH avec les 2 touches "Hotkey"+"BTN1" (ou BTN2 selon votre configuration), maintenir le bouton "Hotkey" pendant 5s.
 
-=> un nouveau son va s'activer[*]
+=> un nouveau son va s'activer (*)
 
-=> Relâcher les 2 boutons, vous avez activer le menu [volume], et désactivé le [bash] temporairement.
-* Appuyer bouton 1 pour **diminuer** le volume
-* Appuyer bouton 2 pour **augmenter** le volume
+=> Vous Pouvez entrer dans le menu [Volume]
 
-Sorti du [volume] automatique et retour au [BASH], 4s après avoir appuyé sur l'un des boutons (se réinitialise à chaque appui)
+=> Si vous relacher maintenant le bouton "Hotkey" Vous etes rentrer dans le menu [volume]
 
-[*]*note: si vous continuez à maintenir simultanément les 2 boutons (3s de plus), un nouveau son se lance et retour automatique au [BASH]*
+* Appuyer bouton 1 pour **diminuer** le volume par pallier de 3.
+* Appuyer bouton 2 pour **augmenter** le volume par pallier de 3.
+
+Sorti du [volume] automatique et retour au [BASH] quelque seconde après le dernier appui (un nouveau son se lance).
+
+2) Si vous avez continué à maintenir le bouton "Hotkey" après le 1er son du menu volume, un nouveau son se lance qui indique que vous pouvez maintenant rentrer dans le menu [UltrasBash].
+
+=> Si vous relacher maintenant le bouton "Hotkey" Vous etes rentrer dans le menu [UltrasBash]
+
+Par défaut la valeur est OFF, si vous appuyé su l'un des 2 boutons (peu importe), le mode passe de OFF à ON et vice versa.
+
+Sorti du [UltrasBash] automatique et retour au [BASH] quelque seconde après le dernier appui (un nouveau son se lance).
 
 ### Pack Sons
 C'est pas parfait, mais j'ai essayé au mieux de récupérer et retravailler pas mal de sons pour mon Bartop personnel.
