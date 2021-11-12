@@ -343,7 +343,7 @@ void loop () {
         numberTrackDefault = 1;
         tab1_swap = tabDefault[folder01Max - 1];
       }
-      for (int c = 0; c < 6000; c++) { // délai entre chaque appui de bouton
+      for (int c = 0; c < 6000; c++) { // en ms, délai minimum avant de pouvoir relancer un son (Default)
         delay(1);
         if (digitalRead(Hotkey) == LOW ) {
           break;
@@ -375,7 +375,7 @@ void loop () {
         numberTrackBonus = 1;
         tab2_swap = tabBonus[folder02Max - 1];
       }
-      for (int c = 0; c < 6000; c++) { // délai entre chaque appui de bouton
+      for (int c = 0; c < 6000; c++) { // en ms, délai minimum avant de pouvoir relancer un son (Bonus)
         delay(1);
         if (digitalRead(Hotkey) == LOW ) {
           break;
