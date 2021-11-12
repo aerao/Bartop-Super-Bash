@@ -46,6 +46,7 @@ Se référer aux exemples de la page suivante selon votre convenance :
 
 ## Version
 v. 1.1 - Mise à jour du code et optimisation
+
 v. 1.0 - Projet initial - 2019-03-10 *(version perfectible, toutes remarques seront évidemment les bienvenues)*
 
 ## Autheur
