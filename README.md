@@ -31,7 +31,7 @@ Appuyer sur l'un des 2 boutons de votre Bartop déclanche un [BASH] à votre adv
 Dans l'idéal, le couple Arduino/Dfplayer doivent être relié à un ampli/HP (indépendant de l'ampli/HP général de votre Bartop)
 
 ### Installation
-* Il faudra avant tout bien s'inspirer du shema de montage (**=> voir plus bas Section Montage (Arduino + DFPlayer Mini + Ampli + 1xHP**)
+* Il faudra avant tout bien s'inspirer du shema de montage (=> voir plus bas Section **Montage (Arduino + DFPlayer Mini + Ampli + 1xHP**)
 * Récupérer la librairie [DFRobotDFPlayerMini] v.1.05 (https://www.arduino.cc/reference/en/libraries/dfrobotdfplayermini/) ou (https://mega.nz/file/0MEHXSCB#Ll_3Q3HHRbwC-IE89Ay4Hl84D3Fg_eX5i_0HHzBq6_Q)
 * Installer le dossier *DFRobotDFPlayerMini-1.0.5* dans votre dossier par defaut. exemple *C:\Program Files (x86)\Arduino\libraries*
 * Installer (si par la suite la connection/le teléversement ne fonctionne pas) les drivers (https://mega.nz/folder/EZFxgSqL#_8i05frTEYTZpttdJB3Csw)
