@@ -10,11 +10,13 @@ L'idée est de lancer manuellement un "Bash", un pique, une casse... à votre ad
 Certains sons, plus "cassant", peuvent aussi être lancés (plus rare).
 
 ### Principe
+Vous avez un Bartop et vous avez/voulez rajouter 1 bouton de chaque coté + 1 autre (où bon vous semble) qui servira de "Hotkey" (pour démarrer le programme qui sera installer sur votre carte Arduino/Nano), à ne pas confondre avec le hotkey de Recalbox/Batocera.
+
 Appuyer sur l'un des 2 boutons de votre Bartop déclanche un [BASH] à votre adversaire/ami
 
 
 ### Développement
-* Version 3 boutons de type Arcade (relié à l'Arduino) => 2 boutons (à mettre sur chaque coté de votre Borne + 1 bouton type "Hotkey" (voir README_3B.MD)
+* Version 3 boutons de type Arcade (relié à l'Arduino) => 2 boutons (à mettre sur chaque coté de votre Borne + 1 bouton type "Hotkey"
 * Codé pour l'Arduino/Nano/DFPlayer Mini, avec la librairie [DFRobotDFPlayerMini](https://www.arduino.cc/reference/en/libraries/dfrobotdfplayermini/)
 
 ### Prérequis et Matériel
