@@ -21,7 +21,7 @@ Appuyer sur l'un des 2 boutons de votre Bartop déclanche un [BASH] à votre adv
 
 ### Prérequis et Matériel
 - Avoir un Bartop (ou Borne d'arcade)
-- 2 ou 3 boutons arcade de libre
+- 2 ou 3 boutons arcade à rajouter ou utilsé si déjà mis en place mais inutilisé.
 - Arduino (nano/uno)
 - DFPlayer Mini
 - SDCard
@@ -30,6 +30,7 @@ Appuyer sur l'un des 2 boutons de votre Bartop déclanche un [BASH] à votre adv
 Dans l'idéal, le couple Arduino/Dfplayer doivent être relié à un ampli/HP (indépendant de l'ampli/HP général de votre Bartop)
 
 ### Installation
+* Il faudra avant tout bien s'inspirer du shema de montage (**=> voir plus bas Section Montage (Arduino + DFPlayer Mini + Ampli + 1xHP**)
 * Récupérer la librairie [DFRobotDFPlayerMini] v.1.05 (https://www.arduino.cc/reference/en/libraries/dfrobotdfplayermini/) ou (https://mega.nz/file/0MEHXSCB#Ll_3Q3HHRbwC-IE89Ay4Hl84D3Fg_eX5i_0HHzBq6_Q)
 * Installer le dossier *DFRobotDFPlayerMini-1.0.5* dans votre dossier par defaut. exemple *C:\Program Files (x86)\Arduino\libraries*
 * Installer (si par la suite la connection/le teléversement ne fonctionne pas) les drivers (https://mega.nz/folder/EZFxgSqL#_8i05frTEYTZpttdJB3Csw)
@@ -102,7 +103,7 @@ les valeurs (4,3,2) peuvent etre différent selon là ou vous brancher vos bouto
 
 Dans mon cas la broche D4 de l'Arduino correspondait à la valeur 2
 
-### Montage (Arduino + DFPlayer Mini + Ampli + 1xHP )
+### Montage (Arduino + DFPlayer Mini + Ampli + 1xHP)
 Se référer aux exemples de la page suivante selon votre convenance :
 - https://mega.nz/file/MI100BZZ#fO6gkXS1gv7UxtjZW72Olm4Yiv1-k_3HTWc0UjcRUt4 (anciennement http://www.belajarduino.com/2016/10/arduinop.html qui ne fonctionne plus. J'ai récupéré le contenu via web archive et j'ai compressé la page html dans le zip (que vous devez décompresser pour lire la page), c'est pas le plus optimisé mais ca reste fonctionnel. (fonctionne sous firefox, chrome, opera)
 
