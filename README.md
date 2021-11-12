@@ -23,7 +23,7 @@ Appuyer sur l'un des 2 boutons de votre Bartop déclanche un [BASH] à votre adv
 - Avoir un Bartop (ou Borne d'arcade)
 - 2 ou 3 boutons arcade à rajouter ou utilsé si déjà mis en place mais inutilisé.
 - Arduino (nano/uno)
-- l'alimentation (5V) de votre Arduino via cable USB, qui sera dans votre votre Borne (ou alimenter via un raspberry)
+- Une alimentation (5V) pour votre Arduino via un cable USB, qui sera dans votre votre Borne (ou l'alimenter via un raspberry)
 - DFPlayer Mini
 - SDCard
 - Sons au format MP3 (entre 1s et 10s max recommandé)
