@@ -65,6 +65,9 @@ byte tabBonus[20]; // valeur max 255
 ### Accès au menu du [volume] et au mode [UltrasBash]
 Pour le volume, cela permet d'éviter d'ouvrir le Bartop pour modifier le volume du [BASH], sur l'ampli si celui n'est pas très accessible.
 Dans le programme Arduino (Bartop-Super-Bash_3B.ino) la valeur par defaut du [volume] est à 24/30.
+```
+unsigned int vol_BSB = 24; // volume (0-30)
+```
 
 1) Si vous avez déja lancer le BASH avec les 2 touches "Hotkey"+"BTN1" (ou BTN2 selon votre configuration), maintenir le bouton "Hotkey" pendant 5s.
 
