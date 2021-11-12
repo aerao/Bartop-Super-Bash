@@ -1,7 +1,7 @@
 ////////////////////////////////////////////////////
 //                                                //
 //    BARTOP SUPER BASH                           //
-//    v1.0 (10/03/2019)                           //
+//    v1.1 (11/11/2021)                           //
 //    aerao                                       //
 //    https://github.com/aerao/Bartop-Super-Bash  //
 //                                                //
@@ -16,27 +16,29 @@ SoftwareSerial mySoftwareSerial(10, 11); // RX, TX
 DFRobotDFPlayerMini myDFPlayer;
 
 // ACCESS
-const byte btnP1 = 2; // D2 Arduino
-const byte btnP2 = 3; // D3 Arduino
-const byte Hotkey = 4; // D7 Arduino
+const byte btnP1 = 4; // D2 Arduino Nano
+const byte btnP2 = 3; // D3 Arduino Nano
+const byte Hotkey = 2; // D4 Arduino Nano
 unsigned long begin_timer;
 unsigned long begin_timer2;
 unsigned int vol_BSB = 24; // volume (0-30)
-const int time_out = 10000;
+const int time_out = 4000;
 bool swap1 = false;
 bool swap2 = false;
 bool swap3 = false;
 bool swap4 = false;
 bool swap5 = false;
+bool swap6 = false;
+bool swap7 = false;
 bool stop_BSB = false;
 bool timerT1 = false;
 bool timerT2 = false;
 bool variable_T = false;
-bool menu_Vol = false;
+bool Config_Vol = false;
 bool param_Vol = false;
-bool menu_Bash = false;
-bool param_Bash = false;
-bool bash_onoff = true;
+bool Config_UltraBash = false;
+bool param_UltraBash = false;
+bool UltraBash = false;
 bool menu_general = true;
 bool menu_secondaire = false;
 bool play_Music = false;
@@ -44,16 +46,17 @@ bool access_BSB = false;
 
 // VARIABLES
 byte start;
-byte start_init = 1;
-byte varBonus;
 byte folder01Max;
 byte folder02Max;
 byte compteur1 = 0;
 byte compteur2 = 0;
+byte numberTrackDefault = 1;
+byte numberTrackBonus = 1;
 byte tabDefault[80];
 byte tabBonus[20];
 byte tab1_swap = 1;
 byte tab2_swap = 1;
+byte varBonus;
 byte bonusMP3 = 25; // en %
 
 void setup () {
@@ -63,6 +66,7 @@ void setup () {
   pinMode(btnP1, INPUT_PULLUP);
   pinMode(btnP2, INPUT_PULLUP);
   pinMode(Hotkey, INPUT_PULLUP);
+  
   myDFPlayer.begin(mySoftwareSerial);
   myDFPlayer.setTimeOut(500);
   myDFPlayer.volume(vol_BSB);
@@ -122,14 +126,15 @@ void loop () {
       if (swap1 == false) {
         begin_timer = millis();
         swap1 = true;
-        Serial.println("Activation [BSB] en cours...");
+        Serial.println("==| TURN ON BASHBOARD IN PROGRESS... [==");
       }
       else if ((millis() - begin_timer) >= time_out) {
         randomInit();
         access_BSB = true;
         menu_secondaire = true;
-        Serial.println("BSB => ACTIVÉ");
-        myDFPlayer.playLargeFolder(3, 1);
+        Serial.println("BASHBOARD => [ON]");
+        Serial.println("ULTRA_BASH => [OFF]");
+        myDFPlayer.playLargeFolder(3, 6);
         delay(2000);
       }
     }
@@ -139,23 +144,23 @@ void loop () {
       if (timerT1 == false) {
         timerT1 = true;
         begin_timer = millis();
-        Serial.println("Désactivation [BSB] en cours...");
+        Serial.println("==| TURN OFF BASHBOARD IN PROGRESS... [==");
       }
-      if ((millis() - begin_timer) < 8000) {
+      if ((millis() - begin_timer) < 4000) {
         begin_timer2 = millis();
         if (swap5 == false) {
           swap5 = true;
-          Serial.println("[Réinitialisation] begin_timer2");
+          Serial.println("RESET [begin_timer2]");
         }
         //delay(666);
       }
-      if ((millis() - begin_timer) > 8000) {
+      if ((millis() - begin_timer) > 4000) {
         access_BSB = false;
         menu_secondaire = false;
         if (swap1 == false) {
           swap1 = true;
-          Serial.println("[BSB] => DÉSACTIVÉ");
-          myDFPlayer.playLargeFolder(3, 2);
+          Serial.println("BASHBOARD => [OFF]");
+          myDFPlayer.playLargeFolder(3, 7);
           delay(3000);
         }
       }
@@ -173,51 +178,64 @@ void loop () {
       if (timerT2 == false) {
         timerT2 = true;
         begin_timer2 = millis();
-        Serial.println("Accès aux paramètres en cours...");
+        Serial.println("==| LOADING SETTINGS... |==");
+        delay(42);
       }
       if ((millis() > (begin_timer2 + 3000)) && (millis() < (begin_timer2 + 6000))) {
         if (swap2 == false) {
           swap2 = true;
-          menu_Vol = true;
-          Serial.println("Paramètrage [Volume] ?");
+          Config_Vol = true;
+          Serial.println("==| VOLUME ? |==");
           myDFPlayer.playLargeFolder(3, 3);
         }
       }
       if ((millis() > (begin_timer2 + 6000)) && (millis() < (begin_timer2 + 9000))) {
         if (swap3 == false) {
           swap3 = true;
-          Serial.println("Paramètrage [BASH] ?");
-          menu_Vol = false;
-          menu_Bash = true;
+          Serial.println("==| ULTRA_BASH ? |==");
+          Config_Vol = false;
+          Config_UltraBash = true;
           myDFPlayer.playLargeFolder(3, 3);
         }
       }
       if ((millis() - begin_timer2) > 9000) {
         if (swap4 == false) {
           swap4 = true;
-          menu_Bash = false;
-          Serial.println("Retour au BASH");
+          Config_UltraBash = false;
+          Serial.println("EXIT");
           myDFPlayer.playLargeFolder(3, 4);
+          delay(1500);
         }
       }
-
     }
+
+
     //ACCESS MENU VOLUME
-    if (digitalRead(Hotkey) == HIGH && menu_Vol == true) {
+    if (digitalRead(Hotkey) == HIGH && Config_Vol == true) {
       timer_init();
       menu_general = false;
       access_BSB = false;
       param_Vol = true;
 
+      if (swap6 == false) {
+        swap6 = true;
+        Serial.print("SOUND VOLUME");
+        Serial.print(" ==> [");
+        Serial.print(vol_BSB);
+        Serial.println("/30]");
+      }
 
-      if (param_Vol == true) { //ACCES PARAMETRE VOLUME
+      if (param_Vol == true) { //ACCES PARAMETRES VOLUME
+
+
         if ((digitalRead(btnP1) == LOW) && (vol_BSB > 0)) {
           timer_init();
           vol_BSB = vol_BSB - 3;
           myDFPlayer.volume(vol_BSB);
           myDFPlayer.playLargeFolder(3, 5);
+          Serial.print("[");
           Serial.print(vol_BSB);
-          Serial.println("/30 || Volume --");
+          Serial.println("/30] || VOLUME --");
           delay(666);
         }
         if ((digitalRead(btnP2) == LOW) && (vol_BSB < 30)) {
@@ -225,59 +243,69 @@ void loop () {
           vol_BSB = vol_BSB + 3;
           myDFPlayer.volume(vol_BSB);
           myDFPlayer.playLargeFolder(3, 5);
+          Serial.print("[");
           Serial.print(vol_BSB);
-          Serial.println("/30 || Volume ++");
+          Serial.println("/30] || VOLUME ++");
           delay(666);
         }
         if ((millis() > (begin_timer + 4000)) && param_Vol == true) {
           timer_init();
-          menu_Vol = false;
+          Config_Vol = false;
           access_BSB = true;
           menu_general = true;
           myDFPlayer.playLargeFolder(3, 1);
-          Serial.println("Sortie du menu [Volume]");
+          Serial.println("EXIT");
           delay(1500);
         }
       }
     }
-    //ACCESS MENU BASH
-    if (digitalRead(Hotkey) == HIGH && menu_Bash == true) {
+
+    //ACCESS MENU ULTRA_BASH
+    if (digitalRead(Hotkey) == HIGH && Config_UltraBash == true) {
       timer_init();
       menu_general = false;
       access_BSB = false;
-      param_Bash = true;
+      param_UltraBash = true;
 
-      if (param_Bash == true) { //ACCES PARAMETRE BASH
+      if (swap7 == false) {
+        swap7 = true;
+        Serial.print("SETTING ULTRA_BASH");
+        Serial.print(" ==> ");
+        if (UltraBash == false) {
+          Serial.println("[OFF]");
+        }
+        else {
+          Serial.println("[ON]");
+        }
+      }
+
+      if (param_UltraBash == true) { //ACCES CONFIGURATION ULTRA_BASH
         if (digitalRead(btnP1) == LOW || digitalRead(btnP2) == LOW) {
           timer_init();
-          if (bash_onoff == true) {
-            bash_onoff = false;
-            start_init = 2;
-            Serial.print("BASH [off] = ");
-            Serial.println(bash_onoff);
+          if (UltraBash == false) {
+            UltraBash = true;
+            Serial.print("ULTRA_BASH => [ON] = ");
+            Serial.println(UltraBash);
             delay(666);
           }
           else {
-            bash_onoff = true;
-            start_init = 1;
-            Serial.print("BASH [on] = ");
-            Serial.println(bash_onoff);
+            UltraBash = false;
+            Serial.print("ULTRA_BASH => [OFF] = ");
+            Serial.println(UltraBash);
             delay(666);
           }
         }
-        if ((millis() > (begin_timer + 4000)) && param_Bash == true) {
-          menu_Bash = false;
+        if ((millis() > (begin_timer + 5000)) && param_UltraBash == true) {
+          Config_UltraBash = false;
           access_BSB = true;
           menu_general = true;
           myDFPlayer.playLargeFolder(3, 1);
-          Serial.println("Sortie du menu [Bash]");
+          Serial.println("EXIT");
           delay(1500);
         }
       }
     }
-
   }
-
 
 
   //SECTION BARTOP SUPER BASH
@@ -285,63 +313,88 @@ void loop () {
   if ((digitalRead(btnP1) == LOW || digitalRead(btnP2) == LOW) && digitalRead(Hotkey) == HIGH && access_BSB == true && play_Music == true && stop_BSB == false) {
     delay(42);
 
-    start = random(start_init, varBonus);
+    start = random(1, varBonus);
+    while (UltraBash == false && start == 1) {
+      start = random(1, varBonus);
+    }
 
-    if (start != 1) { //PLAY DEFAULT MP3
-
+    if ((UltraBash == true || UltraBash == false) && start != 1) { //PLAY DEFAULT MP3
       if (compteur1 == 0) {
         melange(tabDefault, folder01Max);
         while (tab1_swap == tabDefault[0] || tab1_swap == tabDefault[1]) {
           melange(tabDefault, folder01Max);
         }
       }
-      Serial.print("Lecture MP3 Default du fichier ");
+      if (numberTrackDefault < 10) {
+        Serial.print("0");
+      }
+      Serial.print(numberTrackDefault);
+      Serial.print("/");
+      Serial.print(folder01Max);
+      Serial.print(" - Lecture MP3 \"Default\" du fichier ");
       Serial.print(tabDefault[compteur1]);
-      Serial.println(".mp3 du dossier [folder01]");
+      Serial.println(".mp3 du dossier \\sdcard\\folder01\\");
       myDFPlayer.playLargeFolder(1, tabDefault[compteur1]);
+      delay(42);
       compteur1++;
+      numberTrackDefault++;
       if (compteur1 == folder01Max) {
         compteur1 = 0;
+        numberTrackDefault = 1;
         tab1_swap = tabDefault[folder01Max - 1];
       }
-     for (int c=0; c < 12000; c++) {
-        delay(1); // délai minimum après Default
-        if (digitalRead(Hotkey) == LOW ) {
-          break;
-        }
-      }
-    }
-    else if (start == 1)  { //PLAY BONUS MP3
-      if (compteur2 == 0) {
-        melange(tabBonus, folder02Max);
-        while (tab2_swap == tabBonus[0] || tab2_swap == tabBonus[1]) {
-          melange(tabBonus, folder02Max);
-        }
-      }
-      Serial.print("Lecture MP3 Bonus du fichier ");
-      Serial.print(tabBonus[compteur2]);
-      Serial.println(".mp3 du dossier [folder02]");
-      myDFPlayer.playLargeFolder(2, tabBonus[compteur2]);
-      compteur2++;
-      if (compteur2 == folder02Max) {
-        compteur2 = 0;
-        tab2_swap = tabBonus[folder02Max - 1];
-      }
-      for (int c=0; c < 12000; c++) {
+      for (int c = 0; c < 6000; c++) { // délai entre chaque appui de bouton
         delay(1);
         if (digitalRead(Hotkey) == LOW ) {
           break;
         }
       }
     }
+    else if (UltraBash == true && start == 1)  { //PLAY BONUS MP3
+      if (compteur2 == 0) {
+        melange(tabBonus, folder02Max);
+        while (tab2_swap == tabBonus[0] || tab2_swap == tabBonus[1]) {
+          melange(tabBonus, folder02Max);
+        }
+      }
+      if (numberTrackBonus < 10) {
+        Serial.print("0");
+      }
+      Serial.print(numberTrackBonus);
+      Serial.print("/");
+      Serial.print(folder02Max);
+      Serial.print(" - Lecture MP3 \"Bonus\" du fichier ");
+      Serial.print(tabBonus[compteur2]);
+      Serial.println(".mp3 du dossier \\sdcard\\folder02\\");
+      myDFPlayer.playLargeFolder(2, tabBonus[compteur2]);
+      delay(42);
+      compteur2++;
+      numberTrackBonus++;
+      if (compteur2 == folder02Max) {
+        compteur2 = 0;
+        numberTrackBonus = 1;
+        tab2_swap = tabBonus[folder02Max - 1];
+      }
+      for (int c = 0; c < 6000; c++) { // délai entre chaque appui de bouton
+        delay(1);
+        if (digitalRead(Hotkey) == LOW ) {
+          break;
+        }
+      }
+    }
+
   }
 
-  if (digitalRead(Hotkey) == HIGH && menu_general == true && menu_Vol == false) {
+  if (digitalRead(Hotkey) == HIGH && menu_general == true && Config_Vol == false) {
     swap1 = false;
     swap2 = false;
     swap3 = false;
     swap4 = false;
     swap5 = false;
+    swap4 = false;
+    swap5 = false;
+    swap6 = false;
+    swap7 = false;
     variable_T = false;
     timerT1 = false;
     timerT2 = false;
@@ -349,4 +402,3 @@ void loop () {
     //access_BSB = true;
   }
 }
-//}
