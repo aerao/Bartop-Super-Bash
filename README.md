@@ -30,7 +30,7 @@ Dans l'idéal, le couple Arduino/Dfplayer doivent être relié à un ampli/HP (i
 ### Installation
 * Récupérer la librairie [DFRobotDFPlayerMini] v.1.05 (https://www.arduino.cc/reference/en/libraries/dfrobotdfplayermini/) ou (https://mega.nz/file/0MEHXSCB#Ll_3Q3HHRbwC-IE89Ay4Hl84D3Fg_eX5i_0HHzBq6_Q)
 * Installer le dossier *DFRobotDFPlayerMini-1.0.5* dans votre dossier par defaut. exemple *C:\Program Files (x86)\Arduino\libraries*
-* Installer (la connection ne fonctionne pas) les drivers (https://mega.nz/folder/EZFxgSqL#_8i05frTEYTZpttdJB3Csw)
+* Installer (si par la suite la connection/le teléversement ne fonctionne pas) les drivers (https://mega.nz/folder/EZFxgSqL#_8i05frTEYTZpttdJB3Csw)
 * Branchez l'Arduino à votre ordinateur, installez le programme [Arduino IDE](https://www.arduino.cc/en/Main/Software), et ouvrez le [croquis](https://github.com/aerao/Bartop-Super-Bash/blob/master/Bartop_Super_Bash.ino).
 * Lancer l'Arduino/Nano, et veiller bien à selectionner (Type de Carte : **Arduino Nano**) et (Processeur : **ATmega** ou **ATemega328P(oldBootloader)** et le Port. Il est possible que **"Récuperer les informations de la carte"** ne fonctionne pas, ce n'est pas grave car le téléversement doit fonctionner.
 - Ouvrer le fichier .ino et téléverser
