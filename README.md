@@ -91,7 +91,9 @@ Quelques sons : https://mega.nz/#!JZMnGSJI!q-EaCZOU7YUW0rML0SYtVur5ViIq8yc9RCose
 ## Divers
 Schéma du PCB en pdf (D1, D2, D3, D4...) correspond aux nombres de boutons que voulez connecter.
 
-#**IMPORTANT !**
+https://mega.nz/file/8EUkRQIQ#D7R4zqDv-dSiYQu1PIAbhOB9P6yXC0C9slNWDV7i9yo PCB fait sur le site Easy EDA, qui permet ensuite de faire l'impression et l'envoi de celui ci, directement via leur site.
+
+# **IMPORTANT !**
 - Dans le fichier *Bartop-Super-Bash_3B.ino*
 ``` 
 const byte btnP1 = 4; // D2 Arduino Nano
