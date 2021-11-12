@@ -121,10 +121,10 @@ les valeurs (4,3,2) peuvent etre différent selon là où vous avez brancher vos
 - Vous n'avez plus qu'à appuyer sur votre bouton Hotkey et l'un des 2 autres boutons et s'affichera le message **TURN ON BASHBOARD IN PROGRESS...** dans la console.
 - Si ce n'est pas les cas, il faudra changer/inverser les valeurs (4,3,2)
 
-### Montage (Arduino + DFPlayer Mini + Ampli + 1xHP)
+### Montage (Arduino + DFPlayer Mini + Ampli + 1xHP + 3 Boutons)
 Se référer aux exemples de la page suivante selon votre convenance :
 - https://mega.nz/file/MI100BZZ#fO6gkXS1gv7UxtjZW72Olm4Yiv1-k_3HTWc0UjcRUt4 (La page de l'auteur n'existe plus, j'ai récupéré l'essentiel du contenu via  https://archive.org/web/  (avant qu'elle ne disparraisse indéfiniment) et j'ai compressé la page html dans le zip (que vous devez décompresser pour lire la page), c'est pas le plus optimisé mais ca reste fonctionnel. (fonctionne sous firefox, chrome, opera)
-
+- Il ne vous restera plus qu'ensuite à brancher vos 3 boutons (Hotkey + 2 BTN) sur les broches D2,D3,D4... de votre Arduino (voir plus haut section **IMPORTANT !**, car il peut y avoir des variantes).
 *note : son de meilleur qualité en **mono** avec la configuration DF Player mini + Module Ampli/Ampli Mono (0.5-25watt)*
 
 
