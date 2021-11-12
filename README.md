@@ -7,7 +7,7 @@ Lance un son aléatoire pour "basher" son adversaire, quand on appuie sur un bou
 
 L'idée est de lancer manuellement un "Bash", un pique, une casse... à votre adversaire quand vous l'avez battu à un combat, comme Street Fighter par exemple (adversaire qui devrait normalement être à coté de vous, étant donné que vous jouez avec lui sur un Bartop).
 
-Certains sons, plus "cassant", peuvent aussi être lancés (plus rare).
+Dans mon programme, certains sons, plus "Vulgaire", peuvent aussi être lancés (ce que j'ai appelé *Bonus*).
 
 ### Principe
 Vous avez un Bartop et vous avez/voulez rajouter 1 bouton de chaque coté + 1 autre (où bon vous semble) qui servira de "Hotkey" (pour démarrer le programme qui sera installer sur votre carte Arduino/Nano), à ne pas confondre avec le hotkey de Recalbox/Batocera.
